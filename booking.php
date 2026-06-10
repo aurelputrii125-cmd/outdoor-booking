@@ -111,16 +111,16 @@ while($row = mysqli_fetch_assoc($peralatan_res)) {
         <div class="footer-container">
             <div class="footer-info">
                 <p><strong>Kontak Kami:</strong></p>
-                <p>📧 Email: admin@petualangoutdoor.com</p>
-                <p>📞 No. Telepon: 0812-3456-7890</p>
+                <p>📧 Email: fourtektokers@gmail.com</p>
+                <p>📞 No. Telepon: 0857-4958-3301</p>
             </div>
             <div class="footer-social">
                 <p><strong>Media Sosial:</strong></p>
-                <p>📸 Instagram: <a href="https://instagram.com/username_kamu" target="_blank">@username_kamu</a></p>
+                <p>📸 Instagram: <a href="https://instagram.com/four.tektokers" target="_blank">@four.tektokers</a></p>
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2026 Petualang Outdoor RENT. All Rights Reserved.</p>
+            <p>&copy; 2026 Four.Tektokers. All Rights Reserved.</p>
         </div>
     </footer>
 </body>

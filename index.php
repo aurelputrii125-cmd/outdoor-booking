@@ -43,7 +43,7 @@
             <div class="footer-info">
                 <p><strong>Kontak Kami:</strong></p>
                 <p>📧 Email: fourtektokers@gmail.com</p>
-                <p>📞 No. Telepon: 0857-4953-8301</p>
+                <p>📞 No. Telepon: 0857-4958-3301</p>
             </div>
             <div class="footer-social">
                 <p><strong>Media Sosial:</strong></p>

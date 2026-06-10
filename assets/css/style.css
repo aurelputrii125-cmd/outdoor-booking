@@ -1,0 +1,185 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body { 
+    font-family: Arial, sans-serif; 
+    background-color: #f4f4f4; 
+    color: #333; 
+    line-height: 1.6;
+}
+
+header { 
+    background-color: #2c3e50; 
+    color: white; 
+    padding: 20px 10px; 
+    text-align: center; 
+}
+
+header h1 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+nav a { 
+    color: white; 
+    text-decoration: none; 
+    font-weight: bold; 
+    padding: 5px 10px;
+    font-size: 14px;
+}
+
+nav a:hover {
+    color: #ffc107;
+}
+
+main { 
+    padding: 20px; 
+    max-width: 800px; 
+    margin: 20px auto; 
+    background: white; 
+    border-radius: 8px; 
+    box-shadow: 0 0 10px rgba(0,0,0,0.1); 
+}
+
+h2 {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.katalog-container { 
+    display: flex; 
+    gap: 20px; 
+    flex-wrap: wrap; 
+    justify-content: center;
+}
+
+.card { 
+    background: #fff; 
+    border: 1px solid #ddd; 
+    padding: 15px; 
+    border-radius: 5px; 
+    width: 100%; 
+    max-width: 230px; 
+    text-align: center; 
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+form { 
+    display: flex; 
+    flex-direction: column; 
+}
+
+label { 
+    margin-top: 15px; 
+    font-weight: bold; 
+}
+
+input, select, button { 
+    padding: 12px; 
+    margin-top: 5px; 
+    border-radius: 4px; 
+    border: 1px solid #ccc; 
+    font-size: 16px; 
+    width: 100%;
+}
+
+button { 
+    background-color: #007bff; 
+    color: white; 
+    border: none; 
+    cursor: pointer; 
+    font-weight: bold;
+    margin-top: 15px;
+}
+
+.alat-item { 
+    display: flex; 
+    flex-direction: column; 
+    gap: 10px; 
+    margin-top: 15px; 
+    background: #f8f9fa;
+    padding: 10px;
+    border-radius: 5px;
+    border-left: 4px solid #007bff;
+}
+
+.btn-hapus {
+    background-color: #dc3545;
+    margin-top: 0;
+}
+
+.riwayat-box { 
+    background: #e9ecef; 
+    padding: 15px; 
+    border-radius: 5px; 
+    margin-bottom: 15px; 
+}
+
+.riwayat-box h4 {
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+.riwayat-box ul {
+    margin-top: 10px;
+    padding-left: 20px;
+}
+
+footer {
+    background-color: #2c3e50;
+    color: white;
+    padding: 30px 20px 10px 20px;
+    margin-top: 50px;
+    font-size: 14px;
+}
+
+.footer-container {
+    display: flex;
+    flex-direction: column; 
+    gap: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.footer-info p, .footer-social p {
+    margin: 5px 0;
+}
+
+footer a {
+    color: #ffc107;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 30px;
+    border-top: 1px solid #34495e;
+    padding-top: 15px;
+    font-size: 12px;
+    color: #bdc3c7;
+}
+
+@media (min-width: 600px) {
+    header h1 { font-size: 28px; }
+    nav a { font-size: 16px; }
+    .alat-item { flex-direction: row; align-items: center; }
+    .alat-item select { flex: 2; }
+    .alat-item input { flex: 1; }
+    .alat-item button { flex: 0.5; width: auto; }
+    .footer-container { flex-direction: row; justify-content: space-around; }
+}

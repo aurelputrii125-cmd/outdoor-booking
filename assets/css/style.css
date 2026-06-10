@@ -3,20 +3,32 @@
     margin: 0;
     padding: 0;
 }
+.header-info{
+    margin-top: 25px;
+    font-size: 16px;
+    color: #f4e786;
+     font-style: italic;
+}
 
 body { 
     font-family: Arial, sans-serif; 
-    background-color: #f4f4f4; 
+    background-color: #c1d3fa; 
     color: #333; 
     line-height: 1.6;
 }
 
 header { 
-    background-color: #2c3e50; 
-    color: white; 
-    padding: 20px 10px; 
-    text-align: center; 
-}
+    background-image:
+        linear-gradient(rgba(44, 62, 80, 0.85), rgba(44, 62, 80, 0.85)),
+        url('../images/bg-header.jpg');
+
+    background-size: cover;
+    background-position: center;
+    color: #ffffff;
+    padding: 50px 20px;
+    text-align: center;
+    }
+
 
 header h1 {
     font-size: 24px;
@@ -137,11 +149,12 @@ button {
 
 footer {
     background-color: #2c3e50;
-    color: white;
-    padding: 30px 20px 10px 20px;
-    margin-top: 50px;
-    font-size: 14px;
+    color: #ffffff;
+    padding: 10px 0;
+    margin-top: 30px;
+
 }
+
 
 .footer-container {
     display: flex;

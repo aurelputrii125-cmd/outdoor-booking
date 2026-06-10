@@ -16,6 +16,10 @@
             <a href="booking.php">Booking Sekarang</a>
             <a href="riwayat.php">Riwayat Booking</a>
         </nav>
+
+        <p class="header-info">
+        "Seperti 3726 mdpl, selalu butuh waktu lama untuk mendapatkan sesuatu yang indah"
+    </p>
     </header>
 
     <main>
@@ -26,7 +30,7 @@
             while ($row = mysqli_fetch_assoc($query)) {
             ?>
                 <div class="card">
-                    <img src="assets/images/<?php echo $row['gambar']; ?>" alt="<?php echo $row['nama_alat']; ?>" style="width:100%; height:150px; object-fit:cover; border-radius:5px; margin-bottom:10px;">
+                    <img src="assets/images/<?php echo $row['gambar']; ?>" alt="<?php echo $row['nama_alat']; ?>" style="width:100%; height: 220px; object-fit:cover; border-radius:5px; margin-bottom:10px;">
                     <h3><?php echo $row['nama_alat']; ?></h3>
                     <p style="font-weight:bold; color:#2c3e50; margin-top:5px;">Rp <?php echo number_format($row['harga_sewa'], 0, ',', '.'); ?> / hari</p>
                 </div>

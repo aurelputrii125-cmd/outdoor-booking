@@ -10,7 +10,7 @@
 <body>
     <header>
         <h1>Four.Tektokers</h1>
-        <p>Penyewaan Alat Outdoor Terbaik dan Terlengkap</p>
+        
         <nav>
             <a href="index.php">Beranda</a>
             <a href="booking.php">Booking Sekarang</a>

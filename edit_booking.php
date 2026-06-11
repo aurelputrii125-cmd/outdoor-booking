@@ -59,35 +59,35 @@ if (isset($_POST['update'])) {
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-    <div style="max-width: 600px; margin: 40px auto; background: white; padding: 30px; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); font-family: sans-serif;">
+    <div style="max-width: 600px; margin: 40px auto; background: white; padding: 30px; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); font-family: sans-serif; box-sizing: border-box;">
         <h2 style="color: #2d5a27; margin-bottom: 20px; border-bottom: 2px solid #2d5a27; padding-bottom: 10px;">Edit Booking #<?php echo $id; ?></h2>
         
         <form method="POST">
             <label><strong>Nama Pelanggan:</strong></label>
-            <input type="text" name="nama_pelanggan" value="<?php echo $row['nama_pelanggan']; ?>" required style="width:100%; padding: 10px; margin: 8px 0 18px 0; border: 1px solid #ccc; border-radius:4px;">
+            <input type="text" name="nama_pelanggan" value="<?php echo $row['nama_pelanggan']; ?>" required style="width:100%; padding: 10px; margin: 8px 0 18px 0; border: 1px solid #ccc; border-radius:4px; box-sizing: border-box;">
             
             <label><strong>No. Telepon:</strong></label>
-            <input type="text" name="telepon" value="<?php echo $row['telepon']; ?>" required style="width:100%; padding: 10px; margin: 8px 0 18px 0; border: 1px solid #ccc; border-radius:4px;">
+            <input type="text" name="telepon" value="<?php echo $row['telepon']; ?>" required style="width:100%; padding: 10px; margin: 8px 0 18px 0; border: 1px solid #ccc; border-radius:4px; box-sizing: border-box;">
             
             <div style="display: flex; gap: 15px; margin-bottom: 18px;">
                 <div style="flex: 1;">
                     <label><strong>Tanggal Pinjam:</strong></label>
-                    <input type="date" name="tanggal_booking" value="<?php echo $row['tanggal_booking']; ?>" required style="width:100%; padding: 10px; margin-top: 8px; border: 1px solid #ccc; border-radius:4px;">
+                    <input type="date" name="tanggal_booking" value="<?php echo $row['tanggal_booking']; ?>" required style="width:100%; padding: 10px; margin-top: 8px; border: 1px solid #ccc; border-radius:4px; box-sizing: border-box;">
                 </div>
                 <div style="flex: 1;">
                     <label><strong>Tanggal Kembali:</strong></label>
-                    <input type="date" name="tanggal_kembali" value="<?php echo $row['tanggal_kembali']; ?>" required style="width:100%; padding: 10px; margin-top: 8px; border: 1px solid #ccc; border-radius:4px;">
+                    <input type="date" name="tanggal_kembali" value="<?php echo $row['tanggal_kembali']; ?>" required style="width:100%; padding: 10px; margin-top: 8px; border: 1px solid #ccc; border-radius:4px; box-sizing: border-box;">
                 </div>
             </div>
 
-            <h3 style="color: #8b4513; margin: 25px 0 10px 0; font-size: 18px;">Peralatan yang Disewa:</h3>
+            <h3 style="color: #05151d; margin: 25px 0 10px 0; font-size: 18px;">Peralatan yang Disewa:</h3>
             <div id="container-alat">
                 <?php 
                 // Loop untuk memunculkan alat-alat yang sudah dipilih sebelumnya
                 foreach ($detail_saat_ini as $index => $detail) { 
                 ?>
-                    <div class="baris-alat" style="display: flex; gap: 10px; margin-bottom: 10px; align-items: center;">
-                        <select name="peralatan_id[]" required style="flex: 2; padding: 10px; border: 1px solid #ccc; border-radius:4px;">
+                    <div class="baris-alat" style="display: flex; gap: 10px; margin-bottom: 10px; align-items: center; width: 100%;">
+                        <select name="peralatan_id[]" required style="flex: 3; min-width: 200px; padding: 10px; border: 1px solid #ccc; border-radius:4px; width: auto;">
                             <option value="">-- Pilih Alat --</option>
                             <?php foreach ($peralatan_master as $p) { ?>
                                 <option value="<?php echo $p['id']; ?>" <?php echo ($p['id'] == $detail['peralatan_id']) ? 'selected' : ''; ?>>
@@ -95,17 +95,17 @@ if (isset($_POST['update'])) {
                                 </option>
                             <?php } ?>
                         </select>
-                        <input type="number" name="jumlah[]" value="<?php echo $detail['jumlah']; ?>" min="1" required placeholder="Jumlah" style="width: 80px; padding: 10px; border: 1px solid #ccc; border-radius:4px;">
-                        <button type="button" onclick="hapusBaris(this)" style="background: #e74c3c; color: white; border: none; padding: 10px 12px; border-radius: 4px; cursor: pointer;">X</button>
+                        <input type="number" name="jumlah[]" value="<?php echo $detail['jumlah']; ?>" min="1" required placeholder="Jumlah" style="flex: 1; max-width: 80px; padding: 10px; border: 1px solid #ccc; border-radius:4px; box-sizing: border-box;">
+                        <button type="button" onclick="hapusBaris(this)" style="background: #e74c3c; color: white; border: none; padding: 10px 15px; border-radius: 4px; cursor: pointer; width: auto; flex-shrink: 0; display: inline-block;">X</button>
                     </div>
                 <?php } ?>
             </div>
 
-            <button type="button" onclick="tambahBaris()" style="background: #34495e; color: white; padding: 8px 15px; border: none; border-radius: 4px; cursor: pointer; margin-bottom: 25px; font-size: 13px;">+ Tambah Alat Lain</button>
+            <button type="button" onclick="tambahBaris()" style="background: #34495e; color: white; padding: 8px 15px; border: none; border-radius: 4px; cursor: pointer; margin-bottom: 25px; font-size: 13px; width: auto; display: inline-block;">+ Tambah Alat Lain</button>
             
             <div style="border-top: 1px solid #eee; padding-top: 20px; text-align: right;">
                 <a href="riwayat.php" style="margin-right: 15px; color: #7f8c8d; text-decoration: none; font-weight: bold;">Batal</a>
-                <button type="submit" name="update" style="background: #2d5a27; color: white; padding: 12px 25px; border: none; border-radius: 4px; font-weight: bold; cursor: pointer; font-size: 15px;">Simpan Perubahan</button>
+                <button type="submit" name="update" style="background: #2d5a27; color: white; padding: 12px 25px; border: none; border-radius: 4px; font-weight: bold; cursor: pointer; font-size: 15px; width: auto; display: inline-block;">Simpan Perubahan</button>
             </div>
         </form>
     </div>
@@ -119,16 +119,17 @@ if (isset($_POST['update'])) {
             barisBaru.style.gap = '10px';
             barisBaru.style.marginBottom = '10px';
             barisBaru.style.alignItems = 'center';
+            barisBaru.style.width = '100%';
 
             // Ambil template dropdown pilihan alat dari baris pertama
             var templateSelect = document.querySelector('.baris-alat select').innerHTML;
 
             barisBaru.innerHTML = `
-                <select name="peralatan_id[]" required style="flex: 2; padding: 10px; border: 1px solid #ccc; border-radius:4px;">
+                <select name="peralatan_id[]" required style="flex: 3; min-width: 200px; padding: 10px; border: 1px solid #ccc; border-radius:4px; width: auto;">
                     ${templateSelect}
                 </select>
-                <input type="number" name="jumlah[]" min="1" required placeholder="Jumlah" style="width: 80px; padding: 10px; border: 1px solid #ccc; border-radius:4px;">
-                <button type="button" onclick="hapusBaris(this)" style="background: #e74c3c; color: white; border: none; padding: 10px 12px; border-radius: 4px; cursor: pointer;">X</button>
+                <input type="number" name="jumlah[]" min="1" required placeholder="Jumlah" style="flex: 1; max-width: 80px; padding: 10px; border: 1px solid #ccc; border-radius:4px; box-sizing: border-box;">
+                <button type="button" onclick="hapusBaris(this)" style="background: #e74c3c; color: white; border: none; padding: 10px 15px; border-radius: 4px; cursor: pointer; width: auto; flex-shrink: 0; display: inline-block;">X</button>
             `;
             
             // Reset pilihan pada baris baru agar kosong kembali sewaktu di-tambah

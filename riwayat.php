@@ -17,7 +17,7 @@
         </nav>
     </header>
 
-    <main>
+    <main style="padding: 20px; max-width: 800px; margin: 0 auto;">
         <?php
         $query = mysqli_query($conn, "SELECT * FROM bookings ORDER BY id DESC");
         if (mysqli_num_rows($query) == 0) {
@@ -26,7 +26,7 @@
         while ($b = mysqli_fetch_assoc($query)) {
             $booking_id = $b['id'];
         ?>
-            <div class="riwayat-box">
+            <div class="riwayat-box" style="background: #fff; padding: 20px; margin-bottom: 15px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); position: relative;">
                 <h4>Booking ID: #<?php echo $booking_id; ?> - Atas Nama: <?php echo $b['nama_pelanggan']; ?></h4>
                 <p>No. Telp: <?php echo $b['telepon']; ?> | Durasi: <?php echo $b['tanggal_booking']; ?> s/d <?php echo $b['tanggal_kembali']; ?></p>
                 <ul>
@@ -37,8 +37,13 @@
                     }
                     ?>
                 </ul>
+                
+                <div style="margin-top: 15px; text-align: right;">
+                    <a href="edit_booking.php?id=<?php echo $booking_id; ?>" style="background: #2980b9; color: white; padding: 5px 12px; text-decoration: none; border-radius: 4px; font-size: 14px; margin-right: 5px;">Edit Data</a>
+                    <a href="hapus_booking.php?id=<?php echo $booking_id; ?>" onclick="return confirm('Apakah Anda yakin ingin menghapus pesanan ini?')" style="background: #c0392b; color: white; padding: 5px 12px; text-decoration: none; border-radius: 4px; font-size: 14px;">Hapus</a>
+                </div>
             </div>
-            <hr>
+            <hr style="border: 0; border-top: 1px solid #eee; margin: 20px 0;">
         <?php } ?>
     </main>
 
